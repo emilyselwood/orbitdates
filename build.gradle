@@ -1,0 +1,26 @@
+group 'org.wselwood.orbit'
+version '1.0-SNAPSHOT'
+
+apply plugin : 'scala'
+
+project.ext.scalaVersion = '2.11.9'
+project.ext.sparkVersion = '2.2.0'
+
+sourceCompatibility = 1.8
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.scala-lang:scala-library:${project.ext.scalaVersion}"
+    compile "org.scala-lang:scala-reflect:${project.ext.scalaVersion}"
+    compile "org.scala-lang:scala-compiler:${project.ext.scalaVersion}"
+    compile "org.apache.spark:spark-core_2.11:${project.ext.sparkVersion}"
+    compile "org.apache.spark:spark-sql_2.11:${project.ext.sparkVersion}"
+
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+
+}

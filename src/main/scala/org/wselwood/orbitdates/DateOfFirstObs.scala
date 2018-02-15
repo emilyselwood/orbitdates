@@ -51,8 +51,7 @@ object DateOfFirstObs {
       .withColumn("id", coalesce(col("number_formatted"), col("Principal_desig")))
       .checkpoint()
 
-
-    //orbRec.show(10)
+    orbRec.show(5)
 
     val result = obs.join(orbRec, obs.col("id").equalTo(orbRec.col("id")), "inner")
       .select(

@@ -84,6 +84,10 @@ object ObsUtils {
     LocalDateTime.ofEpochSecond(in, 0, ZoneOffset.UTC).getDayOfWeek.getValue
   }
 
+  def yearFunc(in : Long) : Int = {
+    LocalDateTime.ofEpochSecond(in, 0, ZoneOffset.UTC).getYear
+  }
+
   def isAllDigits(x: String) : Boolean = x.forall(Character.isDigit)
 
 
